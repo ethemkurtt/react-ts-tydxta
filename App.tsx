@@ -1,24 +1,13 @@
 import * as React from 'react';
 import './style.css';
 import CountrySelect from './components/InputCountry';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import DeleteIcon from '@material-ui/icons/Delete';
-
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import InputPassword from './components/InputPassword';
-
-export default function App() {
+import FormButton from './components/FormButton';
+export default function App(probs) {
   return (
     <Grid
       container
@@ -41,10 +30,14 @@ export default function App() {
         <Box sx={{ p: 1 }}>
           <CountrySelect />
         </Box>
-        <Button variant="outlined">
-          Delete
-          <DeleteIcon />
-        </Button>
+        <Box sx={{ p: 1 }}>
+          <Box sx={{ float: 'left' }}>
+            <FormButton name={'Delete'} />
+          </Box>
+          <Box sx={{ float: 'left', marginLeft: '10px' }}>
+            <FormButton name={'Add Account'} />
+          </Box>
+        </Box>
       </Grid>
     </Grid>
   );
